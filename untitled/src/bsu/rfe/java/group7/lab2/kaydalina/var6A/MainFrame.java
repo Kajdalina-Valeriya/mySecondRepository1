@@ -48,13 +48,7 @@ public class MainFrame extends JFrame {
                             "Ошибка ввода", JOptionPane.WARNING_MESSAGE);
             return 0.0;
         }
-
-        if (z == -1) {
-            JOptionPane.showMessageDialog(MainFrame.this,
-                    "Z не может равняться -1", " " +
-                            "Ошибка ввода", JOptionPane.WARNING_MESSAGE);
-            return 0.0;
-        }
+        
         return Math.pow((Math.cos(Math.pow(Math.E, y)) + Math.pow(Math.E, y * y) + Math.sqrt(1/x)), 0.25) /
                 Math.pow((Math.cos(Math.PI * z * z * z) + Math.log((1 + z) * (1 + z))), Math.sin(y));
     }
