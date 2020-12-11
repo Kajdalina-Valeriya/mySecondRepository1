@@ -17,6 +17,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 
+
 public class MainFrame extends JFrame {
     // Размеры окна приложения в виде констант
     private static final int WIDTH = 500;
@@ -118,7 +119,7 @@ public class MainFrame extends JFrame {
         hboxVariables.add(Box.createHorizontalGlue());
 // Создать область для вывода результата
         JLabel labelForResult = new JLabel("Результат:");
-        textFieldResult = new JTextField("0", 10);
+        textFieldResult = new JTextField("0", 40);
         textFieldResult.setMaximumSize(textFieldResult.getPreferredSize());
         Box hboxResult = Box.createHorizontalBox();
         hboxResult.add(Box.createHorizontalGlue());
@@ -153,16 +154,17 @@ public class MainFrame extends JFrame {
         JButton buttonSum = new JButton("M+");
         buttonSum.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ev){
+                Double mem1 =0.0;
                 try {
                     Double x = Double.parseDouble(textFieldX.getText());
                     Double y = Double.parseDouble(textFieldY.getText());
                     Double z = Double.parseDouble(textFieldZ.getText());
 
                     if (formulaId==1)
-                        SUM += calculate1(x, y, z);
+                        mem1+=SUM;
                     else
-                        SUM += calculate2(x, y, z);
-                    textFieldResult.setText(Double.toString(SUM));
+                        mem1+=SUM;
+                    textFieldResult.setText(Double.toString(mem1));
                 }
                 catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(MainFrame.this,
